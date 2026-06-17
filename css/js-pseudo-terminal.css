@@ -1,0 +1,71 @@
+@charset "UTF-8";
+
+:root {
+  --font-family: "Monospace";
+  --background-color: #222;
+  --foreground-color: #eee;
+  --input-row-background-color: #333;
+  --font-size: 1rem;
+}
+
+.pseudo-term {
+  font-family: var(--font-family);
+  color: var(--foreground-color);
+  background-color: var(--background-color);
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+
+  &>.pseudo-term-header {
+    padding: 1rem 0.5rem;
+    margin: 0;
+    background-color: #222;
+  }
+
+  &>.pseudo-term-viewport {
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    overflow: hidden;
+
+    &>.pseudo-term-display-section {
+      overflow: auto;
+      white-space: preserve;
+      font-size: var(--font-size);
+      padding-bottom: 0.5rem;
+      border-bottom: thin solid #555;
+    }
+
+    &>.pseudo-term-input-row {
+      flex-direction: row;
+      align-items: first baseline;
+      background-color: var(--input-row-background-color);
+      display: none;
+      width: 100%;
+
+      &.accepting-input {
+        display: flex;
+      }
+
+      &>textarea.pseudo-term-input {
+        height: auto;
+        margin: 0.5rem;
+        flex-grow: 1;
+        font-size: var(--font-size);
+        background-color: var(--input-row-background-color);
+        font-family: var(--font-family);
+        padding: 0;
+        resize: none;
+        border: none;
+        color: var(--foreground-color);
+        overflow-y: hidden;
+
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+  }
+}

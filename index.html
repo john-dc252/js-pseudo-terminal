@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <link rel="stylesheet" href="css/js-pseudo-terminal.css" />
+    <link rel="stylesheet" href="css/main.css" />
+</head>
+
+<body>
+    <div id="app-root">
+        <div class="pseudo-term">
+            <header class="pseudo-term-header">JS Pseudo Terminal</header>
+            <div class="pseudo-term-viewport">
+                <div class="pseudo-term-display-section"></div>
+                <div class="pseudo-term-input-row">
+                    <span class="pseudo-term-accepting-input-indicator">~></span>
+                    <textarea name="terminal-input" class="pseudo-term-input" rows="1"></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="js/app-root.mjs"></script>
+</body>
+
+</html>
